@@ -1,5 +1,4 @@
 const apiKey = '4a0e79689829435eb83ca8cad35f3fef';
-debugger
 const defaultSource = 'the-washington-post';
 const sourceSelector = document.querySelector('#sources');
 const newsArticles = document.querySelector('main');
