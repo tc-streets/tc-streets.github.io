@@ -3,7 +3,7 @@ const defaultSource = 'the-washington-post';
 const sourceSelector = document.querySelector('#sources');
 const newsArticles = document.querySelector('main');
 
-if ('serviceWorker' in navigator) {
+if ('serviceWorkers' in navigator) {
   window.addEventListener('load', () =>
     navigator.serviceWorker.register('sw.js')
       .then(registration => console.log('Service Worker registered'))
