@@ -3,12 +3,12 @@ const defaultSource = 'the-washington-post';
 const sourceSelector = document.querySelector('#sources');
 const newsArticles = document.querySelector('main');
 
-if ('serviceWorkers' in navigator) {
-  window.addEventListener('load', () =>
-    navigator.serviceWorker.register('sw.js')
-      .then(registration => console.log('Service Worker registered'))
-      .catch(err => 'SW registration failed'));
-}
+// if ('serviceWorkers' in navigator) {
+//   window.addEventListener('load', () =>
+//     navigator.serviceWorker.register('sw.js')
+//       .then(registration => console.log('Service Worker registered'))
+//       .catch(err => 'SW registration failed'));
+// }
 
 window.addEventListener('load', e => {
   sourceSelector.addEventListener('change', evt => updateNews(evt.target.value));
@@ -23,8 +23,25 @@ window.addEventListener('online', () => updateNews(sourceSelector.value));
 async function updateNewsSources() {
   const response = await fetch(`https://newsapi.org/v2/sources?apiKey=${apiKey}`);
   const json = await response.json();
+  sources=`al-jazeera-english
+  ars-technica
+  bbc-news
+  bild
+  cnn
+  die-zeit
+  espn
+  hacker-news
+  techcrunch
+  the-guardian-uk
+  the-huffington-post
+  the-new-york-times
+  the-wall-street-journal
+  the-washington-post`.split('\n')
+
+  mySource=json.sources
+  debugger;
   sourceSelector.innerHTML =
-    json.sources
+    sources
       .map(source => `<option value="${source.id}">${source.name}</option>`)
       .join('\n');
 }
