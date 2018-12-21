@@ -40,7 +40,8 @@ async function updateNewsSources() {
 
   mySource=json.sources
   sourceSelector.innerHTML =
-    sources
+    // sources
+    mySource
       .map(source => `<option value="${source.id}">${source.name}</option>`)
       .join('\n');
 }
