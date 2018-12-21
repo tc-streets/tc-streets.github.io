@@ -39,7 +39,6 @@ async function updateNewsSources() {
   the-washington-post`.split('\n')
 
   mySource=json.sources
-  debugger;
   sourceSelector.innerHTML =
     sources
       .map(source => `<option value="${source.id}">${source.name}</option>`)
