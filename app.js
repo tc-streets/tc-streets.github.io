@@ -23,7 +23,7 @@ window.addEventListener('online', () => updateNews(sourceSelector.value));
 async function updateNewsSources() {
   const response = await fetch(`https://newsapi.org/v2/sources?apiKey=${apiKey}`);
   const json = await response.json();
-  sources=`al-jazeera-english
+  sources = `al-jazeera-english
   ars-technica
   bbc-news
   bild
@@ -37,13 +37,23 @@ async function updateNewsSources() {
   the-new-york-times
   the-wall-street-journal
   the-washington-post`.split('\n')
-
-  mySource=json.sources
+  sources = sources.map(n => n.trim())
+  mySource = json.sources
+  red = mySource.reduce((all, item) => {
+    f = {}
+    if (sources.indexOf(item["id"]) != -1) {
+      f['id'] = item.id
+      f['name'] = item.name
+      all.push(f)
+    }
+    return all
+  }, [])
+  debugger
   sourceSelector.innerHTML =
     // sources
-    mySource
-      .map(source => `<option value="${source.id}">${source.name}</option>`)
-      .join('\n');
+    red
+    .map(source => `<option value="${source.id}">${source.name}</option>`)
+    .join('\n');
 }
 
 async function updateNews(source = defaultSource) {

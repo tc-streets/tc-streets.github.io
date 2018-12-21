@@ -16,6 +16,12 @@ header {
   flex-wrap: wrap;
 }
 
+.mh {
+  margin: 0 auto;
+  width: 90%;
+  text-align: center;
+}
+
 main {
   display: grid;
   grid-gap: 30px;
@@ -36,4 +42,8 @@ main {
 
 .article img {
   width: 100%;
+}
+
+input[type="radio"] {
+  margin-left: 10px;
 }
