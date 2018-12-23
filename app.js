@@ -48,7 +48,6 @@ async function updateNewsSources() {
     }
     return all
   }, [])
-  debugger
   sourceSelector.innerHTML =
     // sources
     red
