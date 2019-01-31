@@ -1,28 +1,3 @@
-const apiKey = '4a0e79689829435eb83ca8cad35f3fef';
-const defaultSource = 'the-washington-post';
-const sourceSelector = document.querySelector('#sources');
-const newsArticles = document.querySelector('main');
-
-// if ('serviceWorkers' in navigator) {
-//   window.addEventListener('load', () =>
-//     navigator.serviceWorker.register('sw.js')
-//       .then(registration => console.log('Service Worker registered'))
-//       .catch(err => 'SW registration failed'));
-// }
-
-window.addEventListener('load', e => {
-  sourceSelector.addEventListener('change', evt => updateNews(evt.target.value));
-  updateNewsSources().then(() => {
-    sourceSelector.value = defaultSource;
-    updateNews();
-  });
-});
-
-window.addEventListener('online', () => updateNews(sourceSelector.value));
-
-async function updateNewsSources() {
-  const response = await fetch(`https://newsapi.org/v2/sources?apiKey=${apiKey}`);
-  const json = await response.json();
   sources = `al-jazeera-english
   ars-technica
   bbc-news
@@ -38,33 +13,61 @@ async function updateNewsSources() {
   the-wall-street-journal
   the-washington-post`.split('\n')
   sources = sources.map(n => n.trim())
-  mySource = json.sources
-  red = mySource.reduce((all, item) => {
-    f = {}
-    if (sources.indexOf(item["id"]) != -1) {
-      f['id'] = item.id
-      f['name'] = item.name
-      all.push(f)
-    }
-    return all
-  }, [])
-  sourceSelector.innerHTML =
-    // sources
-    red
-    .map(source => `<option value="${source.id}">${source.name}</option>`)
-    .join('\n');
-}
+  const apiKey = '4a0e79689829435eb83ca8cad35f3fef';
+  const defaultSource = 'the-washington-post';
+  const sourceSelector = document.querySelector('#sources');
+  const newsArticles = document.querySelector('main');
+  const buts = document.querySelector('#buts')
 
-async function updateNews(source = defaultSource) {
-  newsArticles.innerHTML = '';
-  const response = await fetch(`https://newsapi.org/v2/top-headlines?sources=${source}&sortBy=top&apiKey=${apiKey}`);
-  const json = await response.json();
-  newsArticles.innerHTML =
-    json.articles.map(createArticle).join('\n');
-}
+  // if ('serviceWorkers' in navigator) {
+  //   window.addEventListener('load', () =>
+  //     navigator.serviceWorker.register('sw.js')
+  //       .then(registration => console.log('Service Worker registered'))
+  //       .catch(err => 'SW registration failed'));
+  // }
 
-function createArticle(article) {
-  return `
+  window.addEventListener('load', e => {
+    // sourceSelector.addEventListener('change', evt => updateNews(evt.target.value));
+    debugger
+    buts.innerHTML = sources.map(a => `<li ${a}</li>`)
+    updateNewsSources().then(() => {
+      // sourceSelector.value = defaultSource;
+      updateNews();
+    });
+  });
+
+  window.addEventListener('online', () => updateNews(sourceSelector.value));
+
+  async function updateNewsSources() {
+    const response = await fetch(`https://newsapi.org/v2/sources?apiKey=${apiKey}`);
+    const json = await response.json();
+    mySource = json.sources
+    red = mySource.reduce((all, item) => {
+      f = {}
+      if (sources.indexOf(item["id"]) != -1) {
+        f['id'] = item.id
+        f['name'] = item.name
+        all.push(f)
+      }
+      return all
+    }, [])
+    // txtA.innerHTML =
+    //   // sources
+    //   red
+    //   .map(source => `${source.id} ${source.name}`)
+    //   .join('\n');
+  }
+
+  async function updateNews(source = defaultSource) {
+    newsArticles.innerHTML = '';
+    const response = await fetch(`https://newsapi.org/v2/top-headlines?sources=${source}&sortBy=top&apiKey=${apiKey}`);
+    const json = await response.json();
+    newsArticles.innerHTML =
+      json.articles.map(createArticle).join('\n');
+  }
+
+  function createArticle(article) {
+    return `
     <div class="article">
       <a href="${article.url}">
         <h2>${article.title}</h2>
@@ -73,4 +76,4 @@ function createArticle(article) {
       </a>
     </div>
   `;
-}
+  }
