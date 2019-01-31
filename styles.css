@@ -28,7 +28,7 @@ header {
 .mh {
   margin: 0 auto;
   width: 90%;
-  text-align: center;
+  /* text-align: center; */
 }
 
 main {
@@ -65,4 +65,39 @@ input[type="radio"] {
   padding: 14px 28px;
   font-size: 16px;
   cursor: pointer;
+}
+
+#buts {
+
+  font-weight: 600;
+  background-color: #1111;
+  display: flex;
+  text-transform: uppercase;
+  font-size: 10px;
+  justify-content: space-around;
+  padding: .2rem;
+  margin-bottom: 2.9rem;
+}
+
+#buts>li {
+  border-right: 1px solid black;
+  padding: 0.9rem;
+}
+
+#buts>li:last-child {
+  border: none;
+  padding: 0.9rem;
+}
+
+#buts>li:hover {
+  border-right: 1px solid black;
+  padding: 0.9rem;
+  background-color: #8888;
+}
+
+@media screen and (max-width: 700px) {
+  #buts {
+    background-color: #ff0000;
+    flex-wrap: wrap;
+  }
 }

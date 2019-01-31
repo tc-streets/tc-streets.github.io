@@ -3,8 +3,10 @@
   bbc-news
   bild
   cnn
+  der-tagesspiegel
   die-zeit
   espn
+  fox-news
   hacker-news
   techcrunch
   the-guardian-uk
@@ -14,7 +16,7 @@
   the-washington-post`.split('\n')
   sources = sources.map(n => n.trim())
   const apiKey = '4a0e79689829435eb83ca8cad35f3fef';
-  const defaultSource = 'the-washington-post';
+  const defaultSource = 'the-wall-street-journal';
   const sourceSelector = document.querySelector('#sources');
   const newsArticles = document.querySelector('main');
   const buts = document.querySelector('#buts')
@@ -27,17 +29,16 @@
   // }
 
   window.addEventListener('load', e => {
-    // sourceSelector.addEventListener('change', evt => updateNews(evt.target.value));
-    debugger
-    buts.innerHTML = sources.map(a => `<li ${a}</li>`)
+    buts.innerHTML = sources.map(a => `<li onclick="clicker(event)"> ${a}</li>`).join("")
     updateNewsSources().then(() => {
-      // sourceSelector.value = defaultSource;
       updateNews();
     });
   });
 
+  function clicker(e) {
+    updateNews(e.target.innerHTML)
+  }
   window.addEventListener('online', () => updateNews(sourceSelector.value));
-
   async function updateNewsSources() {
     const response = await fetch(`https://newsapi.org/v2/sources?apiKey=${apiKey}`);
     const json = await response.json();
@@ -51,13 +52,7 @@
       }
       return all
     }, [])
-    // txtA.innerHTML =
-    //   // sources
-    //   red
-    //   .map(source => `${source.id} ${source.name}`)
-    //   .join('\n');
   }
-
   async function updateNews(source = defaultSource) {
     newsArticles.innerHTML = '';
     const response = await fetch(`https://newsapi.org/v2/top-headlines?sources=${source}&sortBy=top&apiKey=${apiKey}`);
