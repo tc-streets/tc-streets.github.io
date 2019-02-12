@@ -20,14 +20,13 @@ function mapper(aPlaces) {
       `<div class="row" style="height: 100%">
                 <div class="card blue-grey darken-1" style="height: 100%">
                     <div class="card-content white-text">
-                        Food
+                    ${f[8]}
                         <span class="card-title">${f[0]}</span>
                         Address: ${f[1]} <br>
                         Phone: ${stp(f[2])} <br>
                         Hours: ${stp(f[3])} <br>
                         Remarks: ${stp(f[4])} <br>
                     </div>
-                </div>
             </div>
         </div>`
     )
@@ -52,9 +51,9 @@ fetch(url)
     console.log("data from promise is", data)
     filType(allPlaces, "c")
   })
-document
-  .getElementById("clothes")
-  .addEventListener("click", () => filType(allPlaces, "c"))
-document
-  .getElementById("food")
-  .addEventListener("click", () => filType(allPlaces, "f"))
+let className = document.getElementsByClassName('clothes')
+Array.from(className).forEach(e =>
+  e.addEventListener("click", () => filType(allPlaces, "c")))
+let classNameF = document.getElementsByClassName('food')
+Array.from(classNameF).forEach(e =>
+  e.addEventListener("click", () => filType(allPlaces, "f")))
