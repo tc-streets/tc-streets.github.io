@@ -34,12 +34,22 @@ body {
     background-color: aliceblue;
 }
 
-.smenu {
-    /* visibility: hidden; */
+/* .smenu {
+    visibility: hidden;
+} */
+
+#service {
+    color: #ff0000;
+    margin-left: .3rem;
+    background-color: white;
 }
 
 #search {
     padding-left: .5rem;
+}
+
+.collapsible-body {
+    padding: .5rem 2rem;
 }
 
 @media only screen and (max-width: 800px) {

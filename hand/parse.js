@@ -1,5 +1,6 @@
 const fs = require('fs')
-const data = fs.readFileSync('b.txt', 'utf8')
+const fileName = './Serve.txt'
+const data = fs.readFileSync(fileName, 'utf8')
 debugger
 tdata = data.trim().split('\r\n').map(line => line.split('\t'))
 // rdata = tdata.reduce((customers, line) => {
@@ -19,4 +20,6 @@ tdata = data.trim().split('\r\n').map(line => line.split('\t'))
 
 // , {})
 // console.log(tdata)
-console.log(JSON.stringify(tdata, null, 2))
+let dataW = JSON.stringify(tdata, null, 2)
+fs.writeFileSync('/mnt/c/projects/perm/hand/data/data.json', dataW)
+console.log(JSON.stringify(dataW))

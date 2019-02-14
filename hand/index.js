@@ -1,4 +1,11 @@
 //get rid of colon on data
+
+serviceConvert = {
+  "c": "Clothes Closet",
+  "fs": "Food Shelves"
+
+}
+
 function stp(snip) {
   let regex = /Phone:?\s+|hours:?\s+|remarks:?"\s|"+/gi
   return snip.replace(regex, "")
@@ -15,14 +22,18 @@ function filChar(char) {
 //generic fill card mapper
 function mapper(aPlaces) {
   p = aPlaces
+
+    // <span id="service"> ${f[8]} 
+    // leave out service span for now
     .map(
       f =>
       `<div class="row" style="height: 100%">
                 <div class="card blue-grey darken-1" style="height: 100%">
                     <div class="card-content white-text">
-                    ${f[8]}
-                        <span class="card-title">${f[0]}</span>
-                        Address: ${f[1]} <br>
+                        <span class="card-title">${f[0]}
+                        </span></span>
+                      Service: ${serviceConvert[f[8]]} <br>
+                      Address: ${f[1]} <br>
                         Phone: ${stp(f[2])} <br>
                         Hours: ${stp(f[3])} <br>
                         Remarks: ${stp(f[4])} <br>
@@ -42,7 +53,9 @@ function filType(places, type) {
   cards.innerHTML = str
 }
 // url = 'dum.txt'
-url = "https://raw.githubusercontent.com/wither7007/hand/master/data/data.json"
+// url = "https://raw.githubusercontent.com/wither7007/hand/master/data/data.json"
+// url = "https://raw.githubusercontent.com/wither7007/handbook/menuPlay/data/data.json"
+url = "./local.json"
 let allPlaces = []
 fetch(url)
   .then(resp => resp.json())
@@ -54,6 +67,6 @@ fetch(url)
 let className = document.getElementsByClassName('clothes')
 Array.from(className).forEach(e =>
   e.addEventListener("click", () => filType(allPlaces, "c")))
-let classNameF = document.getElementsByClassName('food')
+let classNameF = document.getElementsByClassName('fs')
 Array.from(classNameF).forEach(e =>
-  e.addEventListener("click", () => filType(allPlaces, "f")))
+  e.addEventListener("click", () => filType(allPlaces, "fs")))
