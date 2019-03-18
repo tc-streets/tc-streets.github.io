@@ -8,27 +8,30 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="style.css">
-    <title>HandBook</title>
+    <!-- <link rel="manifest" href="/manifest.json"> -->
+    <link rel="icon" href="/images/icons-512.png">
+    <title>TC Streets</title>
+    <style>
+        #cards .row {
+        width: 100%;
+        margin: 0;
+    }
+    </style>
 </head>
 
 <body>
-    <ul id="slide-out" class="sidenav">
-        <li>
-            <div class="divider"></div>
-        </li>
-        <li><a class="subheader">Essentials</a></li>
-        <li><a class="waves-effect clothes" href="#!">Clothes</a></li>
-        <li><a class="waves-effect fs" href="#!">Food Shelves</a></li>
-    </ul>
+    <div id="slide"></div>
     <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-
+    <div id="logo">TCStreets.org</div>
     <div class="containers">
         <div class="wrapper">
             <ul class="collapsible">
                 <li>
-                    <div class="collapsible-header"><i class="material-icons">expand_more</i>Essentails</div>
-                    <div class="collapsible-body"><span class="clothes">Clothes</span></div>
+                    <div class="collapsible-header"><i class="material-icons">expand_more</i>Essentials</div>
+                    <div class="collapsible-body"><span class="cc">Clothes</span></div>
                     <div class="collapsible-body"><span class="fs">Food Shelves</span></div>
+                    <div class="collapsible-body"><span class="me">Meals</span></div>
+                    <div class="collapsible-body"><span class="sh">Shelter</span></div>
                 </li>
                 <li>
                     <div class="collapsible-header"><i class="material-icons">expand_more</i>Public Assistance</div>

@@ -1,0 +1,371 @@
+ 2/1: print "hello"
+ 2/2: print ("hello")
+ 2/3: import numpy as np
+ 3/1: import numpy as np
+ 3/2: import matplotlib.pyplot as plt
+ 4/1: import matplotlib.pyplot as plt
+ 4/2: import numpy as np
+ 4/3: import pandas as pd
+ 5/1: import numpy as np
+ 5/2: import pandas as pd
+ 5/3: import numpy as np
+ 5/4: train = pd.read_csv("../input/train.csv")
+ 5/5: train = pd.read_csv("train.csv")
+ 5/6: train.describe
+ 6/1:
+import numpy as np
+import pandas as pd
+ 6/2: train = pd.read_csv("train.csv")
+ 6/3: train.describe()
+ 6/4: print(train.columns)
+ 6/5: train.sample(20)
+ 6/6: print(train.dtypes)
+ 7/1: from pathlib import Path
+ 7/2: p=Path('.')
+ 7/3: p.absolute
+ 7/4: p.absolute()
+ 7/5: str(p.absolute())
+ 7/6: str(p.absolute())
+ 7/7: p.absolute().as_uri()
+ 7/8: p.is_dir()
+ 7/9: [x for x in p.iterdir()]
+7/10: fp=p/'no'
+7/11: fp.open('wt').write('hello')
+7/12: fp.close()
+7/13: fp.close()
+7/14: fp.name()
+7/15: history
+7/16: shell
+7/17: fp.read_text()
+7/18: p.
+ 8/1: history
+ 8/2: import os
+ 8/3:
+def getch():
+         os.system("bash -c \"read -n 1\"")
+ 8/4: getch()
+ 8/5:
+def getch():
+         os.system("bash -c \"ls
+         \"")
+ 8/6:
+def getch():
+         os.system("bash -c \"ls\"")
+ 8/7: getch()
+ 8/8: import os
+ 8/9: print os
+8/10: print(os)
+8/11: print(os.getcwd)
+8/12: print(os.getcwd())
+8/13: os.mkdir("poop")
+8/14: os.rmdir("poop")
+8/15: os.listdir()
+8/16: os.mkdir("poop")
+8/17: os.listdir()
+8/18: os.listdir()
+8/19: os.remove('README.md')
+8/20: os.listdir()
+8/21: def hello();
+8/22: def hello();
+8/23: def hello();
+8/24: def hello();
+8/25: def hello();
+8/26: def hello();
+8/27: def hello();
+8/28: def hello();
+8/29:
+def hello(); \
+print("hello")
+8/30:
+def hello() \
+print("hello")
+8/31:
+def hello() 
+
+print("hello")
+8/32:
+def hello();
+
+
+print("hello")
+8/33: load a.py
+8/34:
+# %load a.py
+def hello();
+    print("hello")
+8/35: import a.py
+8/36:
+def hello_command(name, print_counter=False, repeat=10):
+        """Print nice greetings."""
+            for i in range(repeat):
+                        if print_counter:
+                                        print i+1,
+8/37:         print 'Hello, %s!' % name
+ 9/1: execfile('a.py')
+ 9/2: import('a.py')
+ 9/3: import a.py
+ 9/4: import 'a.py'
+10/1:
+def po():
+    print("po")
+10/2: po()
+11/1: l
+11/2: path = r'c:\example2\media\uploads\test5.txt'
+11/3: path
+11/4: path.upper
+11/5: path.upper()
+11/6: path.upper()
+11/7: path.replace('a','xxx')
+11/8: path.replace('\','/')
+11/9: path.replace('\\','\/')
+11/10: path.replace('\','\/')
+11/11: path.replace('\\','\/')
+11/12: path.replace('\\\\','\/')
+11/13: path.replace('\\','\/')
+11/14: path
+11/15: j=r'\'
+11/16: history
+11/17: j=r'a\'
+11/18: j = r'a\'
+11/19: j = r'c:\example2\media\uploads\test5.txt'
+11/20: j = r'\example2\media\uploads\test5.txt'
+11/21: j = r'a\example2\media\uploads\test5.txt'
+11/22: j = r'a\a'
+11/23: j
+12/1: x=[]
+12/2: print(bool(x))
+13/1: ls
+13/2: text="hum2"
+13/3:
+with open(text, "r") as fileToRead:
+    fileRead = fileToRead()
+14/1: ls
+14/2: text="hum2"
+14/3:
+with open(text, "r") as fileToRead:
+    fileRead = fileToRead()
+14/4:
+with open(text, "r") as fileToRead:
+    fileRead = fileToRead.read()
+14/5: print(fileRead)
+14/6: print(fileRead[:59])
+14/7: print(fileRead[:159])
+16/1: history
+17/1: import os, time, sys
+17/2: f = os.path.join(path, f)
+17/3: path = r"c:\"
+17/4: path = r"c:\users\%myusername%\downloads"
+17/5: f = os.path.join(path, f)
+17/6:
+for f in os.listdir(path):
+    print(f)
+17/7: path = r"c:\users\%myusername%\downloads"
+17/8: path = r"."
+17/9:
+for f in os.listdir(path):
+    print(f)
+17/10:
+for f in os.listdir(path):
+    f = os.path.join(path, f)
+17/11: print(f)
+17/12:
+for f in os.listdir(path):
+    f = os.path.join(path, f)
+    print(f)
+17/13:
+for f in os.listdir(path):
+    f = os.path.join(path, f)
+    print(f)
+    if os.stat(f).st_mtime < now - 7 * 86400:
+        if os.path.isfile(f):
+            os.remove(os.path.join(path, f))
+17/14: now=time.time()
+17/15: print(now)
+17/16:
+for f in os.listdir(path):
+    f = os.path.join(path, f)
+    print(f)
+    if os.stat(f).st_mtime < now - 7 * 86400:
+        if os.path.isfile(f):
+            os.remove(os.path.join(path, f))
+19/1: history
+19/2: %history -g
+19/3: %history -g -f h
+20/1: for i in range(5)
+20/2:
+for i in range(5):
+    print(i)
+20/3:
+for i in range(5,10):
+    print(i)
+20/4: print(range(10))
+20/5:
+for n in range(1,10):
+    print(n)
+20/6:
+for n in range(2,10):
+    for x in range(2,n)
+20/7:
+for n in range(2,10):
+    for x in range(2,n);
+20/8:
+for n in range(2,10):
+    for x in range(2,n):
+        if x % ==0:
+            print(n, 'equals', x, '*', n//x)
+20/9:
+for n in range(2,10):
+    for x in range(2,n):
+        if n % x  ==0:
+            print(n, 'equals', x, '*', n//x)
+            break
+    else
+20/10:
+for n in range(2,10):
+    for x in range(2,n):
+        if n % x  ==0:
+            print(n, 'equals', x, '*', n//x)
+            break
+    else:
+        print(n, 'is a prime')
+20/11:
+for n in range(2,1000):
+    for x in range(2,n):
+        if n % x  ==0:
+            print(n, 'equals', x, '*', n//x)
+            break
+    else:
+        print(n, 'is a prime')
+20/12:
+for n in range(2,100000):
+    for x in range(2,n):
+        if n % x  ==0:
+            print(n, 'equals', x, '*', n//x)
+            break
+    else:
+        print(n, 'is a prime')
+20/13:
+for n in range(2,100000):
+    for x in range(2,n):
+        if n % x  ==0:
+        #    print(n, 'equals', x, '*', n//x)
+            break
+    else:
+        print(n, 'is a prime')
+21/1: import os
+21/2: list_file = open('del', "r")
+21/3: list = list_file.read().splitlines()
+21/4: list_file.close()
+21/5: print(list)
+21/6: path=os.getcwd()
+21/7: print(path)
+21/8: filenames=os.listdir(path)
+21/9: for filename in filenames
+21/10:
+for filename in filenames:
+    print(filename)
+21/11:
+for filename in filenames:
+    os.rename(filename, filename.replace(" ", "-").lower())
+22/1: ?
+22/2: import os
+22/3: history
+23/1:
+x=1
+y=3
+x+y
+23/2: import tensorflow as tf
+23/3:
+import platform
+print(platform.python_version())
+23/4: import os
+23/5: import os
+23/6: #Sine curve
+23/7: #Sine curve
+23/8: ##since
+23/9: import numpy as np
+23/10:
+%matplotlib inline
+import numpy as np
+import matplotlib.pyplot as plt
+pi=np.pi
+x=np.linspace(-4*pi, 4*pi, 1000)
+plt.plot(x, np.sin(x)/x)
+plt.show
+23/11:
+%matplotlib inline
+import numpy as np
+import matplotlib.pyplot as plt
+23/12:
+# Import the necessary packages and modules
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Prepare the data
+x = np.linspace(0, 10, 100)
+
+# Plot the data
+plt.plot(x, x, label='linear')
+
+# Add a legend
+plt.legend()
+
+# Show the plot
+plt.show()
+24/1: y=[]
+24/2: print(bool(y))
+24/3: y=[1,2,3]
+24/4: print(bool(y))
+25/1: from BeautifulSoup import BeautifulSoup
+25/2: from bs4 import BeautifulSoup
+25/3: import urllib2
+25/4: import requests
+25/5: requests.get('http://shakespeare.mit.edu/othello/full.html')
+25/6: r=requests.get('http://shakespeare.mit.edu/othello/full.html')
+25/7: r.text
+25/8: soup = BeautifulSoup(r.text, 'html.parser')
+25/9: soup
+25/10: print soup.getText
+25/11: print(soup.getText)
+25/12: print(soup.getText())
+25/13: fs=open('othell', 'w')
+25/14: history
+25/15: fs.write(soup.getText())
+26/1: import Faker
+26/2: history
+27/1: import os
+27/2: os.listdir(.)
+27/3: os.listdir('.')
+27/4: os.listdir('.')[1]
+27/5: f=open(os.listdir('.')[1],r)
+27/6: f=open(os.listdir('.')[1],"r")
+27/7: print(f)
+27/8: print(f.read())
+27/9: history
+27/10: f=open(os.listdir('.')[1],"r")
+27/11: m=f.read()
+27/12: print m
+27/13: m
+27/14: print(m)
+27/15: print(m[-1])
+27/16: print(m[-40])
+27/17: print(m[-140])
+27/18: print(m[-440])
+27/19: print(m[-840])
+27/20: print(m[-840:0])
+27/21: import json
+27/22: json.loads(m)
+27/23: m[5]
+27/24:
+with open("data.json", "r") as read_file:
+        data = json.load(read_file)
+27/25: print(data)
+27/26: json.dumps(data)
+27/27: len(data)
+27/28: data[80]
+27/29: data[len(data)]
+27/30: len(data)
+27/31: data[len(data)-1]
+27/32: data
+27/33: data[len(data)-1]
+   1: history -g -f filename

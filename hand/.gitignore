@@ -2,12 +2,14 @@
 
 # compiled output
 #
-/docs
 /dist
 /tmp
 /out-tsc
 
 # Runtime data
+#
+*.pdf
+*.tmp
 pids
 *.pid
 *.seed
