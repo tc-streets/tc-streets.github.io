@@ -1,7 +1,8 @@
 //transforms tab delimited excelNog to noG for address process
 const fs = require('fs')
-const inFileName = './data/excelNog.txt'
-const outFileName = './data/noG.json'
+// const inFileName = './data/excelNog.txt'
+const inFileName = './ex.txt'
+const outFileName = './data/data.json'
 const data = fs.readFileSync(inFileName, 'utf8')
 
 debugger

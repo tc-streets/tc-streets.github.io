@@ -1,5 +1,6 @@
 //get rid of colon on data
-
+let places = []
+let pa = []
 let serviceConvert = {
   cc: "Clothes Closet",
   me: "Meals",
@@ -12,6 +13,7 @@ let serviceConvert = {
   fu: "Furniture",
   cm: "Case Management",
   ea: "Energy Assitance",
+  ta: "Types of Asstisance",
   cl: "Community Clinics",
   hc: "Healthcare for Homeless",
   uc: "Urgent Care",
@@ -30,8 +32,7 @@ let serviceConvert = {
   la: "Legal Aid",
   pm: "Police Misconduct",
   ad: "Advocacy",
-  ex: "Ex-offenders programs",
-
+  ex: "Ex-offenders programs"
 }
 //services for menu should be import
 let servicesMenu = {
@@ -45,10 +46,11 @@ let servicesMenu = {
     ph: "Permanent Housing",
     rh: "Rental Housing",
     fu: "Furniture",
-    cm: "Case Management",
+    cm: "Case Management"
   },
   "Public Assistance": {
-    ea: "Energy Assitance",
+    ta: "Types of Assistance",
+    ea: "Energy Assitance"
   },
   "Health Care": {
     cl: "Community Clinics",
@@ -59,12 +61,12 @@ let servicesMenu = {
     cp: "Community Health",
     aa: "Alcolhol and Chemcial Dependency",
     de: "Dental",
-    vt: "Veterans",
+    vt: "Veterans"
   },
   "Education and Employment": {
     ed: "Education",
     jt: "Job Training",
-    tw: "Temporary Work",
+    tw: "Temporary Work"
   },
   "Special Help and Advocacy": {
     yp: "Youth Programs",
@@ -77,6 +79,7 @@ let servicesMenu = {
   }
 }
 // const services = require('./cat.js')
+//populate slide menu
 let html = ` <ul id="slide-out" class="sidenav">
 `
 for (let f in servicesMenu) {
@@ -87,13 +90,32 @@ for (let f in servicesMenu) {
     <li><a class="subheader">${f}</a></li>
 `
   for (let p in servicesMenu[f]) {
-    html += `<li><a class="waves-effect ${p}" href="#!"> ${servicesMenu[f][p] }</a></li>`
+    html += `<li><a class="waves-effect ${p}" href="#!"> ${
+      servicesMenu[f][p]
+    }</a></li>`
   }
 }
+//populate collapsible menu
 html += "</ul>"
-console.log(html)
-document.getElementById('slide').innerHTML = html
+document.getElementById("slide").innerHTML = html
 
+let htmlC = `<ul class="collapsible">`
+for (let f in servicesMenu) {
+  htmlC += `
+
+        <li>
+            <div class="collapsible-header"><i class="material-icons">expand_more</i>${f}</div>
+`
+  for (let p in servicesMenu[f]) {
+    htmlC += `<div class="collapsible-body"><span class="${p}">${
+      servicesMenu[f][p]
+    }</span></div>`
+  }
+
+  htmlC += "</li>"
+}
+htmlC += "</ul>"
+document.getElementById("collapse").innerHTML = htmlC
 
 //search on change
 function filt(item) {
@@ -128,10 +150,15 @@ function mapper(aPlaces) {
                         Phone: ${f[2]} <br>
                         Hours: ${f[3]} <br>
                         Remarks: ${f[4]} <br>
-                        <a href="https://www.google.com/maps/search/?api=1&query=${f[0].replace(
+                        <a class="example_a" style="margin-top:20px;" href="https://www.google.com/maps/search/?api=1&query=${f[0].replace(
                           /\s+/g,
                           "+"
-                        )}+${f[10]}" target="_blank">Directions </a> </div>
+                        )}+${f[10]}" target="_blank">Directions </a>
+                        
+                       <a class="example_a" style="margin-top:20px; margin-left:8px"href="https://www.centralmpls.org" target="_blank">website </a>  
+                       <a class="example_a" style="margin-top:20px; margin-left:8px"href="tel:5551234567" target="_blank">Call </a>  
+                        </div>
+                        
 
             </div>
         </div>`
@@ -140,10 +167,11 @@ function mapper(aPlaces) {
   return p
 }
 //menu fill by type
-function filType(places, type) {
+function filType(Aplaces, type) {
   cards = document.getElementById("cards")
-  places = places.filter(q => q[8] === type)
+  places = Aplaces.filter(q => q[8] === type)
   str = mapper(places)
+  console.log(places)
   cards.innerHTML = str
 }
 // url = 'https://raw.githubusercontent.com/wither7007/handbook/master/data/data.json'
@@ -158,12 +186,75 @@ fetch(url)
   })
 
 for (let sc in serviceConvert) {
-  console.log(sc)
   p = document.getElementsByClassName(sc)
   for (q of p) {
-    console.log(`q is ${q} and I is ${sc}`)
     q.addEventListener("click", function () {
       filType(allPlaces, sc)
     })
   }
+}
+document.getElementById('print').addEventListener('click', print)
+
+function print() {
+  let line = {
+    0: "----------------",
+    1: "",
+    2: "",
+    3: "",
+    4: ""
+  }
+  placesSlice = places.map(x => [x[0], x[11], x[3], x[2], x[4]])
+  placesSlice.forEach(x => {
+    pa.push(
+      x.reduce(function (acc, cur, i) {
+        acc[i] = cur
+        return acc
+      }, {})
+    )
+    pa.push(line)
+  })
+  printJS({
+    printable: pa,
+    properties: [{
+        field: "0",
+        displayName: "Place"
+      },
+      {
+        field: "1",
+        displayName: "Address"
+      },
+      {
+        field: "2",
+        displayName: "Hours"
+      },
+      {
+        field: "3",
+        displayName: "Phone"
+      },
+      {
+        field: "4",
+        displayName: "Remarks"
+      }
+    ],
+    type: "json",
+    gridStyle: "border: 2px solid #3971A5;"
+  })
+}
+
+function printStyledJson() {
+  places.forEach(x => {
+    pa.push(
+      x.reduce(function (acc, cur, i) {
+        acc[i] = cur
+        return acc
+      }, {})
+    )
+  })
+  printJS({
+    printable: pa,
+    properties: ["test1", "test2"],
+    type: "json",
+    gridStyle: "border: 2px solid #3971A5;",
+    gridHeaderStyle: "color: red;  border: 2px solid #3971A5;"
+  })
 }

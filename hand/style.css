@@ -4,13 +4,17 @@ body {
     overflow: hidden;
 }
 
+ul {
+    margin: 0;
+}
+
 /* make mobile hamburer a little to the right */
 body>a>i {
     margin: 1.4rem;
 }
 
 #logo {
-    margin: 1rem;
+    /* margin: 1rem; */
     font-size: 30px;
     display: inline;
 }
@@ -18,8 +22,8 @@ body>a>i {
 .special {
     color: red !important;
     background-color: white !important;
-    font-weight: bold;
-    font-size: 20px;
+    /* font-weight: bold;
+    font-size: 20px; */
     /* font-family: cursive; */
     grid-column-start: 1;
     grid-column-end: 3;
@@ -34,8 +38,8 @@ body>a>i {
 
 .box {
     background-color: beige;
-    padding: 3rem;
-    margin: 1rem 2rem;
+    padding: 2rem;
+    margin: .5rem 2rem;
     /* width: 80%; */
     height: 90vh;
     overflow: auto;
@@ -67,6 +71,7 @@ body>a>i {
 
 #search {
     padding-left: .5rem;
+    width: 92%;
 }
 
 .collapsible-body {
@@ -84,12 +89,16 @@ body>a>i {
     }
 
 
-    .collapsible {
+    #first {
         display: none;
     }
 
     .box {
         height: 100vh;
         padding: 0;
+    }
+
+    #print {
+        display: none;
     }
 }
