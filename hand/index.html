@@ -11,125 +11,46 @@
     <!-- <link rel="manifest" href="/manifest.json"> -->
     <link rel="icon" href="/images/icons-512.png">
     <title>TC Streets</title>
-    <style>
-        #cards .row {
-            width: 100%;
-            margin: 0;
-        }
-    </style>
 
     <!-- <script src="https://printjs-4de6.kxcdn.com/print.min.js"></script> -->
     <script src="pr.js"></script>
 </head>
-<style>
-    .collapsible-body:hover {
-        color: #000;
-        background-color: #00ff00;
-    }
-
-    #top,
-    #top2 {
-        background-color: pink;
-        /* width: 600px; */
-        display: flex;
-        justify-content: center;
-        align-content: center;
-        align-items: baseline;
-
-
-        .flex1 {
-            flex-grow: 1;
-        }
-
-        #logo2 {
-            flex-grow: 2;
-            color: blue;
-        }
-</style>
 
 <body>
-    <style>
-        .top>ul {
-            display: flex;
-            list-style: none;
-        }
-
-        .top>ul>li {
-            /* margin: 1rem; */
-            border: 1rem;
-            flex-grow: 1;
-            /* border: solid; */
-            padding: 1rem;
-        }
-
-        .top>li:nth-of-type(1) {
-            flex-grow: .4;
-        }
-
-        .top>li:nth-of-type(4) {
-            flex-grow: 10;
-        }
-
-        .top>li:nth-of-type(3) {
-            flex-grow: 7;
-        }
-    </style>
 
 
-    <style>
-        .example_a {
-            color: #000 !important;
-            text-transform: uppercase;
-            background: #c3c3c3;
-            padding: 10px;
-            border-radius: 5px;
-            display: inline-block;
-            border: none;
-        }
-
-        .example_a:hover {
-            /* background: #434343; */
-            letter-spacing: 1px;
-            -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
-            -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
-            box-shadow: 5px 40px -10px rgba(0, 0, 0, 0.57);
-            transition: all 0.4s ease 0s;
-        }
-    </style>
     <span class="top">
 
-        <ul class="top">
+        <ul>
             <li>
                 <div id="slide"></div>
                 <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             </li>
-
             <li>
-
-                <div id="logo"> TCStreets.org </div>
+                <div id="today">today</div>
             </li>
-            <li></li>
+            <li>
+                <div id="weather">weather is</div>
+            </li>
             <li>
 
             </li>
         </ul>
     </span>
 
-
     <div class=" containers">
         <div class="wrapper">
             <div id='first' class="box">
+                <span id="below">
+
+                    <img src="/images/arrow.png" alt=""> Click Below to Start</span>
+                </span>
                 <div id="collapse"></div>
             </div>
             <div id="second" class="box">
-                <style>
-                    .ok {
-                        display: inline;
-                        float: right;
-                    }
-                </style>
                 <div class="ok">
-                    <div id='print' class="button_cont" align="center"><a class="example_a" href="#">Print</a></div>
+                    <div id='print' class="button_cont" align="center"><a class="example_a" href="#">Print</a>
+                    </div>
 
                 </div>
                 <input onkeyup="filChar()" id="search" type="text" placeholder="Search">
@@ -154,6 +75,7 @@
         });
     </script>
     <script src="index.js"></script>
+    <script src="weather.js"></script>
 </body>
 
 </html>

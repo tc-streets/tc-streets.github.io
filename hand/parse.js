@@ -7,10 +7,9 @@ const data = fs.readFileSync(inFileName, 'utf8')
 
 debugger
 
-let regex = /Phone:?\s+|hours:?\s+|"|remarks:?"\s|"+/gi
 tdata = data
     .split('\r\n')
-    .map(line => line.replace(regex, "").split('\t'))
+    .map(line => line.replace(/\"/g, '').split('\t'))
 // remove last stupid blank item
 tdata.pop()
 debugger

@@ -32,7 +32,14 @@ let serviceConvert = {
   la: "Legal Aid",
   pm: "Police Misconduct",
   ad: "Advocacy",
-  ex: "Ex-offenders programs"
+  ex: "Ex-offenders programs",
+  mf: "MN Family Investment Program (mfip)",
+  es: "Emergency Assistance",
+  sn: "Supplemental Nutrition Assistance Program (SNAP)",
+  ga: "General Assistance (GA)",
+  ma: "Medical Assistance (MA)",
+  mp: "Minnesota Supplemental Aid (MSA)",
+  ss: "Social Security",
 }
 //services for menu should be import
 let servicesMenu = {
@@ -50,7 +57,14 @@ let servicesMenu = {
   },
   "Public Assistance": {
     ta: "Types of Assistance",
-    ea: "Energy Assitance"
+    ea: "Energy Assitance",
+    mf: "MN Family Investment Program (mfip)",
+    es: "Emergency Assistance",
+    sn: "Supplemental Nutrition Assistance Program (SNAP)",
+    ga: "General Assistance (GA)",
+    ma: "Medical Assistance (MA)",
+    mp: "Minnesota Supplemental Aid (MSA)",
+    ss: "Social Security",
   },
   "Health Care": {
     cl: "Community Clinics",
@@ -155,8 +169,8 @@ function mapper(aPlaces) {
                           "+"
                         )}+${f[10]}" target="_blank">Directions </a>
                         
-                       <a class="example_a" style="margin-top:20px; margin-left:8px"href="https://www.centralmpls.org" target="_blank">website </a>  
-                       <a class="example_a" style="margin-top:20px; margin-left:8px"href="tel:5551234567" target="_blank">Call </a>  
+                       <a class="example_a" style="margin-top:20px; margin-left:10px" href="http://${f[15]}" target="_blank">website </a>  
+                       <a class="example_a" style="margin-top:20px; margin-left:8px"href="tel:5551234567" id="call" target="_blank">Call </a>  
                         </div>
                         
 
@@ -171,7 +185,6 @@ function filType(Aplaces, type) {
   cards = document.getElementById("cards")
   places = Aplaces.filter(q => q[8] === type)
   str = mapper(places)
-  console.log(places)
   cards.innerHTML = str
 }
 // url = 'https://raw.githubusercontent.com/wither7007/handbook/master/data/data.json'
@@ -193,7 +206,38 @@ for (let sc in serviceConvert) {
     })
   }
 }
+
+function removeTop() {
+  document.querySelector('.top').style.display = "none"
+  document.querySelector('#second').style.height = "100vh"
+}
+Array.from(document.querySelectorAll('.collapsible-header')).forEach(
+  ele => ele.addEventListener('click', removeTop)
+)
 document.getElementById('print').addEventListener('click', print)
+//set date function
+let now = new Date();
+let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+let day = days[now.getDay()];
+let month = months[now.getMonth()];
+let greeting = () => {
+  var today = new Date()
+  var curHr = today.getHours()
+
+  if (curHr < 12) {
+    return ('Good Morning')
+  } else if (curHr < 18) {
+    return ('Good Afternoon')
+  } else {
+    return ('Good Evening')
+  }
+
+
+
+}
+document.getElementById('today').innerHTML = `${greeting()}<br>Today is: <br>${day} ${month} ${now.getDate()}, ${now.getFullYear()}`
 
 function print() {
   let line = {
