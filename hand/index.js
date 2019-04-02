@@ -90,6 +90,11 @@ let servicesMenu = {
     pm: "Police Misconduct",
     ad: "Advocacy",
     ex: "Ex-offenders programs"
+  },
+
+  "Acknowledgements": {
+    sp: "St. Stepehns",
+    lm: "Mission Lodge"
   }
 }
 // const services = require('./cat.js')
@@ -134,7 +139,7 @@ document.getElementById("collapse").innerHTML = htmlC
 //search on change
 function filt(item) {
   // debugger
-  sear = document.getElementById("search").value.toUpperCase()
+let sear = document.getElementById("search").value.toUpperCase()
   if (
     item[0].toUpperCase().match(sear) ||
     serviceConvert[item[8]].toUpperCase().match(sear)
@@ -144,14 +149,14 @@ function filt(item) {
 }
 
 function filChar(char) {
-  cards = document.getElementById("cards")
+  let cards = document.getElementById("cards")
   places = allPlaces.filter(filt)
-  str = mapper(places)
+  let str = mapper(places)
   cards.innerHTML = str
 }
 //generic fill card mapper
 function mapper(aPlaces) {
-  p = aPlaces
+  let p = aPlaces
     .map(
       f =>
       `<div class="row ${f[10] === "h" ? "special" : 3}" style="height: 95 %">
@@ -164,13 +169,13 @@ function mapper(aPlaces) {
                         Phone: ${f[2]} <br>
                         Hours: ${f[3]} <br>
                         Remarks: ${f[4]} <br>
-                        <a class="example_a" style="margin-top:20px;" href="https://www.google.com/maps/search/?api=1&query=${f[0].replace(
+                        <a class="myButton" style="margin-top:20px;" href="https://www.google.com/maps/search/?api=1&query=${f[0].replace(
                           /\s+/g,
                           "+"
                         )}+Minneapolis" target="_blank">Directions </a>
                         
-                       <a class="example_a" style="margin-top:20px; margin-left:10px" href="http://${f[15]}" target="_blank">website </a>  
-                       <a class="example_a" style="margin-top:20px; margin-left:8px"href="tel:${f[2].replace(/-/g,"")}" id="call" target="_blank">Call </a>  
+                       <a class="myButton" style="margin-top:20px; margin-left:10px" href="http://${f[15]}" target="_blank">website </a>  
+                       <a class="myButton" style="margin-top:20px; margin-left:8px"href="tel:${f[2].replace(/-/g,"")}" id="call" target="_blank">Call </a>  
                         </div>
                         
 
@@ -189,7 +194,7 @@ function filType(Aplaces, type) {
 }
 // url = 'https://raw.githubusercontent.com/wither7007/handbook/master/data/data.json'
 // url = "./local.json"
-url = "data.json"
+let url = "data.json"
 let allPlaces = []
 fetch(url)
   .then(resp => resp.json())
@@ -199,7 +204,7 @@ fetch(url)
   })
 
 for (let sc in serviceConvert) {
-  p = document.getElementsByClassName(sc)
+  let p = document.getElementsByClassName(sc)
   for (q of p) {
     q.addEventListener("click", function () {
       filType(allPlaces, sc)

@@ -58,8 +58,8 @@ convert = unixtimestamp => {
     let convdataTime = day
     return convdataTime
 }
-fetch(proxyUrl + targetUrl)
-    // fetch('./wet.json')
+// fetch(proxyUrl + targetUrl)
+    fetch('./wet.json')
     .then(response => {
         if (response.ok) {
             return response.json()

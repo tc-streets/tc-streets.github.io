@@ -1,0 +1,22 @@
+
+/mnt/c/projects/perm/hand/index.js
+  146:10  error  'filChar' is defined but never used          no-unused-vars
+  146:18  error  'char' is defined but never used             no-unused-vars
+  149:3   error  'str' is not defined                         no-undef
+  150:21  error  'str' is not defined                         no-undef
+  185:3   error  'cards' is not defined                       no-undef
+  187:3   error  'str' is not defined                         no-undef
+  188:3   error  'cards' is not defined                       no-undef
+  188:21  error  'str' is not defined                         no-undef
+  202:3   error  'p' is not defined                           no-undef
+  203:8   error  'q' is not defined                           no-undef
+  203:13  error  'p' is not defined                           no-undef
+  204:5   error  'q' is not defined                           no-undef
+  250:3   error  'placesSlice' is not defined                 no-undef
+  251:3   error  'placesSlice' is not defined                 no-undef
+  260:3   error  'printJS' is not defined                     no-undef
+  288:10  error  'printStyledJson' is defined but never used  no-unused-vars
+  297:3   error  'printJS' is not defined                     no-undef
+
+✖ 17 problems (17 errors, 0 warnings)
+

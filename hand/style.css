@@ -13,7 +13,7 @@ body>a>i {
     margin: 1.4rem;
 }
 
-.example_a {
+.myButton {
     color: #000 !important;
     text-transform: uppercase;
     background: #c3c3c3;
@@ -23,7 +23,7 @@ body>a>i {
     border: none;
 }
 
-.example_a:hover {
+.myButton:hover {
     /* background: #434343; */
     letter-spacing: 1px;
     -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
@@ -186,15 +186,15 @@ body>a>i {
 
 @media only screen and (max-width: 800px) {
 
-.example_a {
+.myButton {
     color: #000 !important;
     text-transform: uppercase;
     background: #c3c3c3;
-    padding: 9px;
+    padding: 8px;
     border-radius: 5px;
     display: inline-block;
     border: none;
-    font-size: 12px;
+    font-size: 10px;
 }
 
     #call {
