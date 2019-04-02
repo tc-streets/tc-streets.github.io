@@ -264,12 +264,10 @@ function print() {
   })
   printJS({
     printable: pa,
-
-    documentTitle: "jimbo",
+    documentTitle: serviceConvert[places[0][8]],
     properties: [{
         field: "0",
         displayName: "Place",
-        documentTitle: "hello"
       },
       {
         field: "1",
