@@ -17,7 +17,7 @@ body>a>i {
     color: #000 !important;
     text-transform: uppercase;
     background: #c3c3c3;
-    padding: 10px;
+    padding: 9px;
     border-radius: 5px;
     display: inline-block;
     border: none;
@@ -185,6 +185,18 @@ body>a>i {
 }
 
 @media only screen and (max-width: 800px) {
+
+.example_a {
+    color: #000 !important;
+    text-transform: uppercase;
+    background: #c3c3c3;
+    padding: 9px;
+    border-radius: 5px;
+    display: inline-block;
+    border: none;
+    font-size: 12px;
+}
+
     #call {
         display: inline;
     }
