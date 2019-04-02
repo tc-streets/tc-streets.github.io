@@ -267,7 +267,7 @@
                         modalMessage: "Retrieving Document...",
                         frameId: "printJS",
                         htmlData: "",
-                        documentTitle: "Document",
+                        documentTitle: "Hello",
                         targetStyle: ["clear", "display", "width", "min-width", "height", "min-height", "max-height"],
                         targetStyles: ["border", "box", "break", "text-decoration"],
                         ignoreElements: [],

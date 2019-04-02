@@ -93,7 +93,7 @@ let servicesMenu = {
   },
 
   "Acknowledgements": {
-    sp: "St. Stepehns",
+    sp: "St. Stephens",
     lm: "Mission Lodge"
   }
 }
@@ -139,7 +139,7 @@ document.getElementById("collapse").innerHTML = htmlC
 //search on change
 function filt(item) {
   // debugger
-let sear = document.getElementById("search").value.toUpperCase()
+  let sear = document.getElementById("search").value.toUpperCase()
   if (
     item[0].toUpperCase().match(sear) ||
     serviceConvert[item[8]].toUpperCase().match(sear)
@@ -246,7 +246,7 @@ document.getElementById('today').innerHTML = `${greeting()}<br>Today is: <br>${d
 
 function print() {
   let line = {
-    0: "----------------",
+    0: "---------------",
     1: "",
     2: "",
     3: "",
@@ -264,9 +264,12 @@ function print() {
   })
   printJS({
     printable: pa,
+
+    documentTitle: "jimbo",
     properties: [{
         field: "0",
-        displayName: "Place"
+        displayName: "Place",
+        documentTitle: "hello"
       },
       {
         field: "1",
@@ -287,7 +290,7 @@ function print() {
     ],
     type: "json",
     gridStyle: "border: 2px solid #3971A5;"
-  })
+  }, 'tim')
 }
 
 function printStyledJson() {
