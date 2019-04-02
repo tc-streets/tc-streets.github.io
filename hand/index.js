@@ -167,7 +167,7 @@ function mapper(aPlaces) {
                         <a class="example_a" style="margin-top:20px;" href="https://www.google.com/maps/search/?api=1&query=${f[0].replace(
                           /\s+/g,
                           "+"
-                        )}+${f[10]}" target="_blank">Directions </a>
+                        )}+Minneapolis" target="_blank">Directions </a>
                         
                        <a class="example_a" style="margin-top:20px; margin-left:10px" href="http://${f[15]}" target="_blank">website </a>  
                        <a class="example_a" style="margin-top:20px; margin-left:8px"href="tel:5551234567" id="call" target="_blank">Call </a>  

@@ -73,11 +73,13 @@ body>a>i {
 
 .top {
     transition: .04s;
+    background-image: url("wood2.jpg")
 }
 
 .top>ul {
     display: flex;
-    background: linear-gradient(40deg, rgba(2, 0, 36, 1) 0%, rgba(227, 227, 232, 1) 0%, rgba(1, 212, 255, 1) 10%);
+    /* background: linear-gradient(40deg, rgba(2, 0, 36, 1) 0%, rgba(227, 227, 232, 1) 0%, rgba(1, 212, 255, 1) 10%); */
+    background-image: url("wood2.jpg")
 }
 
 .ok {
@@ -162,9 +164,6 @@ body>a>i {
     background-color: aliceblue;
 }
 
-/* .smenu {
-    visibility: hidden;
-} */
 
 #service {
     color: #ff0000;
@@ -180,21 +179,36 @@ body>a>i {
 .collapsible-body {
     padding: .5rem 2rem;
 }
+
 #first {
     height: 97vh;
 }
 
 @media only screen and (max-width: 800px) {
+    #call {
+        display: inline;
+    }
+.special {
+    color: red !important;
+    background-color: white !important;
+    /* font-weight: bold;
+    font-size: 20px; */
+    /* font-family: cursive; */
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
     .wrapper {
         display: flex;
         flex-direction: column;
     }
+
     #weather {
         display: none;
 
-    }
+        }
+
     #today {
-    display: none;
+        display: none;
     }
 
     .gridCard {
