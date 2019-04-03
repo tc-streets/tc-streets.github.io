@@ -73,7 +73,7 @@ convert = unixtimestamp => {
             a.push([i.time, i.summary, i.temperatureHigh, i.temperatureLow, i.icon])
             return a
         }, [])
-        myHtml = `<div id="wet"> <br> Weather <br>Forecast<br> </div>`
+        myHtml = `<div id="wet"> Weather <br>Forecast<br> </div>`
         myHtml += l
             .map(
                 (v, i) =>
