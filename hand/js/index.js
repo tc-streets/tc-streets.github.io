@@ -1,4 +1,13 @@
 //get rid of colon on data
+let options = ""
+document.addEventListener('DOMContentLoaded', function () {
+  var elems = document.querySelectorAll('.sidenav');
+  var instances = M.Sidenav.init(elems, options);
+});
+document.addEventListener('DOMContentLoaded', function () {
+  var elems = document.querySelectorAll('.collapsible');
+  var instances = M.Collapsible.init(elems, options);
+});
 let places = []
 let pa = []
 let serviceConvert = {
@@ -187,9 +196,10 @@ function mapper(aPlaces) {
 }
 //menu fill by type
 function filType(Aplaces, type) {
-  cards = document.getElementById("cards")
+  let cards = document.getElementById("cards")
+  let q
   places = Aplaces.filter(q => q[8] === type)
-  str = mapper(places)
+  let str = mapper(places)
   cards.innerHTML = str
 }
 // url = 'https://raw.githubusercontent.com/wither7007/handbook/master/data/data.json'
@@ -234,7 +244,7 @@ let greeting = () => {
   if (curHr < 12) {
     return ('Good Morning')
   } else if (curHr < 18) {
-    return ('Good Afternoon')
+    return ('Good Afternoon!')
   } else {
     return ('Good Evening')
   }
@@ -245,6 +255,7 @@ let greeting = () => {
 document.getElementById('today').innerHTML = `${greeting()}<br>Today is: <br>${day} ${month} ${now.getDate()}, ${now.getFullYear()}`
 
 function print() {
+  pa = []
   let line = {
     0: "---------------",
     1: "",
@@ -252,7 +263,7 @@ function print() {
     3: "",
     4: ""
   }
-  placesSlice = places.map(x => [x[0], x[11], x[3], x[2], x[4]])
+  let placesSlice = places.map(x => [x[0], x[11], x[3], x[2], x[4]])
   placesSlice.forEach(x => {
     pa.push(
       x.reduce(function (acc, cur, i) {
@@ -289,22 +300,4 @@ function print() {
     type: "json",
     gridStyle: "border: 2px solid #3971A5;"
   }, 'tim')
-}
-
-function printStyledJson() {
-  places.forEach(x => {
-    pa.push(
-      x.reduce(function (acc, cur, i) {
-        acc[i] = cur
-        return acc
-      }, {})
-    )
-  })
-  printJS({
-    printable: pa,
-    properties: ["test1", "test2"],
-    type: "json",
-    gridStyle: "border: 2px solid #3971A5;",
-    gridHeaderStyle: "color: red;  border: 2px solid #3971A5;"
-  })
 }

@@ -3,24 +3,21 @@
 
 <head>
     <meta charset="UTF-8">
+    <!-- annoying polyfile for js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser-polyfill.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="./materialize.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/materialize.css">
+    <link rel="stylesheet" href="./css/style.css">
     <!-- <link rel="manifest" href="/manifest.json"> -->
     <link rel="icon" href="/images/icons-512.png">
-    <title>TC Streets</title>
-
-    <!-- <script src="https://printjs-4de6.kxcdn.com/print.min.js"></script> -->
-    <script src="pr.js"></script>
+    <title>TC Streets</title> <!-- <script src="https://printjs-4de6.kxcdn.com/print.min.js"></script> -->
+    <script src="./js/pr.js"></script>
 </head>
 
 <body>
-
-
     <span class="top">
-
         <ul>
             <li>
                 <div id="slide"></div>
@@ -32,50 +29,29 @@
             <li>
                 <div id="weather">weather is</div>
             </li>
-            <li>
-
-            </li>
+            <li> </li>
         </ul>
     </span>
-
     <div class=" containers">
         <div class="wrapper">
             <div id='first' class="box">
-                <span id="below">
-
-                    <img src="./images/arrow.png" alt=""> Click Below to Start</span>
-                </span>
+                <span id="below"> <img src="./images/arrow.png" alt=""> Click Below to Start</span>
                 <div id="collapse"></div>
             </div>
             <div id="second" class="box">
                 <div class="ok">
-                    <div id='print' class="button_cont" align="center"><a class="myButton" href="#">Print</a>
+                    <div id='print' class="button_cont" ><a class="myButton" href="#">Print</a>
                     </div>
-
                 </div>
                 <input onkeyup="filChar()" id="search" type="text" placeholder="Search">
                 <div id="cards" class="gridCard "></div>
             </div>
         </div>
     </div>
-    <script src="./materialize.min.js">
+    <script src="./js/materialize.min.js">
     </script>
-    <script>
-        function myClick() {
-            document.getElementById('first').innerHTML = "clicked"
-        }
-        let options = ""
-        document.addEventListener('DOMContentLoaded', function () {
-            var elems = document.querySelectorAll('.sidenav');
-            var instances = M.Sidenav.init(elems, options);
-        });
-        document.addEventListener('DOMContentLoaded', function () {
-            var elems = document.querySelectorAll('.collapsible');
-            var instances = M.Collapsible.init(elems, options);
-        });
-    </script>
-    <script src="index.js"></script>
-    <script src="weather.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/weather.js"></script>
 </body>
 
 </html>

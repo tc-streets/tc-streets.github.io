@@ -2,7 +2,7 @@ body {
     background: rgb(2, 0, 36);
     /* background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(227, 227, 232, 1) 0%, rgba(0, 212, 255, 1) 100%); */
     overflow: hidden;
-    background-image: url("wood4.jpg");
+    background-image: url("../images/cloud.jpg");
 }
 
 ul {
@@ -57,7 +57,6 @@ body>a>i {
     /* padding: 10px, 10px; */
     padding: 0 20px;
     align-items: center;
-    font-size: ;
 }
 
 #wet {
@@ -75,10 +74,6 @@ i.material-icons {
     margin: 0;
 }
 
-.top {
-    transition: .04s;
-    /* background-image: url("wood2.jpg") */
-}
 
 .top>ul {
     display: flex;
