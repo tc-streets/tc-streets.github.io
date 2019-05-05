@@ -1,0 +1,11 @@
+total 56K
+lrwxrwxrwx 1 steff007 steff007   14 Apr 24 22:50 data.json -> data/data.json
+-rwxrwxrwx 1 steff007 steff007 2.2K Apr 24 22:50 index.html
+-rwxrwxrwx 1 steff007 steff007  330 Apr 24 22:50 manifest.json
+-rwxrwxrwx 1 steff007 steff007  48K Apr 24 22:50 package-lock.json
+-rwxrwxrwx 1 steff007 steff007  718 Apr 24 22:50 package.json
+drwxrwxrwx 1 steff007 steff007  512 Apr 24 23:13 images
+drwxrwxrwx 1 steff007 steff007  512 Apr 24 23:13 js
+drwxrwxrwx 1 steff007 steff007  512 Apr 28 11:21 css
+drwxrwxrwx 1 steff007 steff007  512 Apr 28 11:25 data
+-rwxrwxrwx 1 steff007 steff007    0 May  5 11:06 a
